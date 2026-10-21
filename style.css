@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 /* Stili base per il footer /
 .recipe-footer {
 background-color: #2c221e; / Tono caldo, scuro tipo legno/caffè */
@@ -238,7 +237,7 @@ gap: 10px;
 .legal-links {
 margin-top: 0;
 }
-=======
+
 
 /* ================= VARIABLES & RESET ================= */
 :root {
@@ -596,5 +595,5 @@ ul {
   .dropdown-menu a {
     padding: 10px 20px 10px 35px;
   }
->>>>>>> 70a1e6a81567345ee38d675c5acc361c5a3916f6
+
 }
