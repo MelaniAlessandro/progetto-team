@@ -1,1 +1,137 @@
 
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gusto & Fantasia - Ricette Deliziose</title>
+  
+  <!-- Font Google: Playfair Display (Titoli) e Poppins (Testo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome per le icone -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Foglio di Stile Esterno -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= TOP BAR ================= -->
+  <div class="top-bar">
+    <div class="container top-bar-container">
+      <div class="top-info">
+        <span><i class="fa-solid fa-utensils"></i> Oltre 1,000+ ricette spiegate passo passo!</span>
+      </div>
+      <div class="top-socials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN HEADER ================= -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-container">
+      
+      <!-- Logo -->
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-hat-chef"></i>
+        </div>
+        <div class="logo-text">
+          <span>Gusto<span class="accent">&</span>Fantasia</span>
+          <small>Ricette & Segreti in Cucina</small>
+        </div>
+      </a>
+
+      <!-- Barra di ricerca centralizzata -->
+      <div class="header-search">
+        <form action="#" method="GET" class="search-form">
+          <input type="text" placeholder="Cosa ti va di cucinare oggi? (es. Carbonara, Tiramisù...)" aria-label="Cerca ricette">
+          <button type="submit" aria-label="Cerca"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+
+      <!-- Azioni Utente (Preferiti, Account, Toggle Menu Mobile) -->
+      <div class="header-actions">
+        <a href="#" class="action-btn favorites-btn" title="I miei Preferiti">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge">3</span>
+        </a>
+        <a href="#" class="btn btn-primary add-recipe-btn">
+          <i class="fa-solid fa-plus"></i>
+          <span>Invia Ricetta</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Apri menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ================= NAVIGAZIONE PRINCIPALE ================= -->
+    <nav class="main-nav" id="mainNav">
+      <div class="container">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+          
+          <!-- Menu a tendina Categorie -->
+          <li class="nav-item has-dropdown">
+            <a href="#" class="nav-link">
+              Categorie Ricette <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="fa-solid fa-bread-slice"></i> Antipasti & Stuzzichini</a></li>
+              <li><a href="#"><i class="fa-solid fa-bowl-rice"></i> Primi Piatti</a></li>
+              <li><a href="#"><i class="fa-solid fa-drumstick-bite"></i> Secondi di Carne</a></li>
+              <li><a href="#"><i class="fa-solid fa-fish"></i> Secondi di Pesce</a></li>
+              <li><a href="#"><i class="fa-solid fa-carrot"></i> Piatti Vegetariani</a></li>
+              <li><a href="#"><i class="fa-solid fa-cake-candles"></i> Dolci & Dessert</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a href="#" class="nav-link">Veloci & Facili</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Stagionali</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Blog & Consigli</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contatti</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Script per la gestione dello scroll e menu mobile -->
+  <script>
+    const header = document.getElementById('mainHeader');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    // Effetto Sticky/Ombra allo scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Toggle menu mobile
+    mobileToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+      const icon = mobileToggle.querySelector('i');
+      if (mainNav.classList.contains('open')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    });
+  </script>
+</body>
+</html>
